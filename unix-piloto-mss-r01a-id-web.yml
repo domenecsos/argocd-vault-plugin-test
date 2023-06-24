@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: unix-piloto-mss-r01a-id-web
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
