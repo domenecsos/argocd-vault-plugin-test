@@ -10,7 +10,6 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-    destinationCACertificate: ''
   host: unix-piloto-mss-r01a-id-myargocd.apps.k8spro.nextret.net
   path: /
   port:
