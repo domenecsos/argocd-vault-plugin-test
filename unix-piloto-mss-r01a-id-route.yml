@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: unix-piloto-mss-r01a-id-route
+  labels: {}
+spec:
+  to:
+    kind: Service
+    name: unix-piloto-mss-r01a-id-estaticos
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+    destinationCACertificate: ''
+  host: unix-piloto-mss-r01a-id-myargocd.apps.k8spro.nextret.net
+  path: /
+  port:
+    targetPort: 80
