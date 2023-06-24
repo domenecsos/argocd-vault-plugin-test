@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'unix-piloto-mss-r01a-id-web'
+spec:
+  selector:
+    matchLabels:
+      app: unix-piloto-mss-r01a-id-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: unix-piloto-mss-r01a-id-web
+    spec:
+      containers:
+        - name: container
+          image: >-
+            jobs.rtve.local:5000/unix-piloto-mss-r01a-id-web:latest
+          ports:
+            - containerPort: 80
+              protocol: TCP
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
